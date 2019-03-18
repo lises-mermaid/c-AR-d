@@ -1,10 +1,10 @@
-"use strict";
+"use strict"
 
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-import { StyleSheet } from "react-native";
+import { StyleSheet } from "react-native"
 
-import { ViroARScene, ViroText, ViroConstants, ViroVideo } from "react-viro";
+import { ViroARScene, ViroText, ViroConstants, ViroVideo } from "react-viro"
 
 var styles = StyleSheet.create({
   helloWorldTextStyle: {
@@ -18,7 +18,7 @@ var styles = StyleSheet.create({
 
 export default class HelloWorldSceneAR extends Component {
   constructor() {
-    super();
+    super()
 
     // Set initial state here
     this.state = {
@@ -39,9 +39,9 @@ export default class HelloWorldSceneAR extends Component {
           style={styles.helloWorldTextStyle}
         />
         <ViroVideo
-    source={require("../Pears.mp4")}
+    source={require('../assets/Pears.mp4')}
     loop={true}
-    position={[0,2,-5]}
+    position={[0, 2, -5]}
     scale={[2, 2, 0]}
  />
 
@@ -61,4 +61,4 @@ export default class HelloWorldSceneAR extends Component {
   }
 }
 
-module.exports = HelloWorldSceneAR;
+module.exports = HelloWorldSceneAR
