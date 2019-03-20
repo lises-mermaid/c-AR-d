@@ -1,8 +1,8 @@
-"use strict"
+'use strict'
 
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import { StyleSheet } from "react-native"
+import { StyleSheet } from 'react-native'
 
 import {
   ViroScene,
@@ -11,11 +11,11 @@ import {
   ViroVideo,
   Viro360Image,
   ViroImage,
-} from "react-viro"
+} from 'react-viro'
 
 export default class HelloWorldScene extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {} // Set initial state here
   }
@@ -58,7 +58,7 @@ export default class HelloWorldScene extends Component {
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   helloWorldTextStyle: {
     fontFamily: "Arial",
     fontSize: 60,

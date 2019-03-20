@@ -1,5 +1,5 @@
 {
-  "name": "ViroSample",
+  "name": "c-AR-d",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,9 +8,18 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "16.6.1",
     "react-native": "0.57.7",
-    "react-viro": "2.13.0"
+    "react-native-gesture-handler": "^1.1.0",
+    "react-navigation": "^3.5.0",
+    "react-navigation-redux-helpers": "^3.0.0",
+    "react-redux": "^6.0.1",
+    "react-viro": "2.13.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-jest": "24.5.0",
