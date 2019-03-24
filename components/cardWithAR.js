@@ -1,20 +1,20 @@
-"use strict"
+'use strict'
 
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import { StyleSheet } from "react-native"
+import { StyleSheet } from 'react-native'
 
-import { ViroARScene, ViroText, ViroConstants, ViroVideo } from "react-viro"
+import { ViroARScene, ViroText, ViroConstants, ViroVideo } from 'react-viro'
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   helloWorldTextStyle: {
-    fontFamily: "Arial",
+    fontFamily: 'Arial',
     fontSize: 30,
-    color: "#ffffff",
-    textAlignVertical: "center",
-    textAlign: "center"
+    color: '#ffffff',
+    textAlignVertical: 'center',
+    textAlign: 'center'
   }
-});
+})
 
 export default class HelloWorldSceneAR extends Component {
   constructor() {
@@ -22,11 +22,11 @@ export default class HelloWorldSceneAR extends Component {
 
     // Set initial state here
     this.state = {
-      text: "Initializing AR..."
-    };
+      text: 'Initializing AR...'
+    }
 
     // bind 'this' to functions
-    this._onInitialized = this._onInitialized.bind(this);
+    this._onInitialized = this._onInitialized.bind(this)
   }
 
   render() {
@@ -44,17 +44,15 @@ export default class HelloWorldSceneAR extends Component {
     position={[0, 2, -5]}
     scale={[2, 2, 0]}
  />
-
-
       </ViroARScene>
-    );
+    )
   }
 
   _onInitialized(state, reason) {
     if (state == ViroConstants.TRACKING_NORMAL) {
       this.setState({
-        text: "Hello World!"
-      });
+        text: 'Hello World!'
+      })
     } else if (state == ViroConstants.TRACKING_NONE) {
       // Handle loss of tracking
     }
