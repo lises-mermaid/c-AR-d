@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export default class HelloWorldSceneAR extends Component {
+export default class cardWithAR extends Component {
   constructor() {
     super()
 
@@ -39,16 +39,16 @@ export default class HelloWorldSceneAR extends Component {
           style={styles.helloWorldTextStyle}
         />
         <ViroVideo
-    source={require('../assets/Pears.mp4')}
-    loop={true}
-    position={[0, 2, -5]}
-    scale={[2, 2, 0]}
- />
+          source={require('../assets/Pears.mp4')}
+          loop={true}
+          position={[0, 2, -5]}
+          scale={[2, 2, 0]}
+        />
       </ViroARScene>
     )
   }
 
-  _onInitialized(state, reason) {
+  _onInitialized(state) {
     if (state == ViroConstants.TRACKING_NORMAL) {
       this.setState({
         text: 'Hello World!'
@@ -59,4 +59,4 @@ export default class HelloWorldSceneAR extends Component {
   }
 }
 
-module.exports = HelloWorldSceneAR
+module.exports = cardWithAR
