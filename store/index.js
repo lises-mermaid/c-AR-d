@@ -4,9 +4,11 @@ import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import user from './user'
+import card from './card'
 
 const reducer = combineReducers({
-  user
+  user,
+  card
 })
 
 const middleware = composeWithDevTools(applyMiddleware(
