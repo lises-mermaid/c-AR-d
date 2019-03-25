@@ -1,18 +1,9 @@
-/**
- * Copyright (c) 2017-present, Viro, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
 
 import React, { Component } from 'react'
 import {
   Text,
   View,
   StyleSheet,
-  TouchableHighlight,
   TouchableOpacity,
   Button,
   StatusBar,
@@ -40,13 +31,10 @@ const QRScanner = require('./components/qrScanner')
 const GET_WELCOME_SCREEN = 'GET_WELCOME_SCREEN'
 const GET_SCAN_A_CARD = 'GET_SCAN_A_CARD'
 const NO_AR_SUPPORT = 'NO_AR_SUPPORT'
-const SCAN_QRCODE = 'SCAN_QRCODE'
 const QR_SCANNER = 'QR_SCANNER'
 const SELECT_AR_OR_VR = 'SELECT_AR_OR_VR'
 const VR_NAVIGATOR_TYPE = 'VR'
 const AR_NAVIGATOR_TYPE = 'AR'
-const SELECT_SEND_OR_SCAN = 'SELECT_SEND_OR_SCAN'
-const SELECT_CATEGORY = 'SELECT_CATEGORY'
 
 // This determines which type of experience to launch in, or UNSET, if the user should
 // be presented with a choice of AR or VR. By default, we offer the user a choice.
