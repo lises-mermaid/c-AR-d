@@ -9,8 +9,13 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "jest-haste-map": "^24.5.0",
     "react": "16.6.1",
+    "react-art": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-native": "0.57.7",
+    "react-native-camera": "^2.0.2",
+    "react-native-camera-kit": "^6.7.1",
     "react-native-gesture-handler": "^1.1.0",
     "react-navigation": "^3.5.0",
     "react-navigation-redux-helpers": "^3.0.0",
@@ -24,10 +29,11 @@
   "devDependencies": {
     "babel-jest": "24.5.0",
     "jest": "24.5.0",
-    "metro-react-native-babel-preset": "0.53.0",
+    "metro-react-native-babel-preset": "0.53.1",
     "react-test-renderer": "16.6.1"
   },
   "jest": {
     "preset": "react-native"
   }
 }
+
