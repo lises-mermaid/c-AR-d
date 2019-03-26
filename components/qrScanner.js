@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, Alert } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import axios from 'axios'
 
@@ -8,35 +8,30 @@ class QRScanner extends Component {
     super(props)
     this.camera = null
     this.barcodeCodes = []
-    this.cardUUID = ''
-    this.loadCard = this.loadCard.bind(this)
+
     this.state = {
       camera: {
         type: RNCamera.Constants.Type.back,
         flashMode: RNCamera.Constants.FlashMode.auto,
         barcodeFinderVisible: true
-      }
+      },
+      card: {}
     }
+    this.loadCard = this.loadCard.bind(this)
   }
 
-  // async loadCard() {
-  //   const { data } = await axios.get(
-  //     `http://localhost:8080/api/cards/c10b00ae-370f-42a0-ad4b-74ed181ec00c`
-  //   )
-  //   console.warn(data)
-  // }
-
-  onBarCodeRead(scanResult) {
-    this.cardurl = scanResult.data
-    console.warn(this.cardurl)
-    this.carduuid = scanResult.data
-
-    if (scanResult.data !== null) {
-      if (!this.barcodeCodes.includes(scanResult.data)) {
-        this.barcodeCodes.push(scanResult.data)
-        //await this.loadCard();
+  async onBarCodeRead(scanResult) {
+    const cardurl = scanResult.data
+    console.warn(cardurl)
+    if (cardurl !== null && cardurl.includes('http://localhost:8080/api/cards/')) {
+      if (!this.barcodeCodes.includes(cardurl)) {
+        this.barcodeCodes.push(cardurl)
       }
+      const { data } = await axios.get('http://localhost:8080/api/cards/c10b00ae-370f-42a0-ad4b-74ed181ec00c')
+      this.setState(() => ({...this.state, card: {data} }))
       return
+    } else {
+      Alert.alert('Invalid QR code')
     }
   }
 
@@ -46,6 +41,13 @@ class QRScanner extends Component {
       const data = await this.camera.takePictureAsync(options)
       console.log(data.uri)
     }
+  }
+
+  async loadCard() {
+    const { data } = await axios.get(
+      `http://localhost:8080/api/cards/c10b00ae-370f-42a0-ad4b-74ed181ec00c`
+    )
+    console.warn(data)
   }
 
   pendingView() {

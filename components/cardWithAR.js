@@ -51,7 +51,7 @@ export default class cardWithAR extends Component {
   _onInitialized(state) {
     if (state == ViroConstants.TRACKING_NORMAL) {
       this.setState({
-        text: 'Hello World!'
+        text: ''
       })
     } else if (state == ViroConstants.TRACKING_NONE) {
       // Handle loss of tracking
